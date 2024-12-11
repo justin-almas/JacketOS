@@ -104,11 +104,11 @@ $(IMAGE_NAME).hdd: limine/limine kernel
 	mcopy -i $(IMAGE_NAME).hdd@@1M limine/BOOTIA32.EFI ::/EFI/BOOT
 
 .PHONY: clean
-clean:
+clean: distclean
 	$(MAKE) -C kernel clean
 	rm -rf iso_root $(IMAGE_NAME).iso $(IMAGE_NAME).hdd
 
 .PHONY: distclean
-distclean: clean
+distclean: 
 	$(MAKE) -C kernel distclean
 	rm -rf kernel-deps limine ovmf
