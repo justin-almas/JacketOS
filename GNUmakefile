@@ -3,9 +3,9 @@ MAKEFLAGS += -rR
 .SUFFIXES:
 
 # Default user QEMU flags. These are appended to the QEMU command calls.
-QEMUFLAGS := -m 2G
+QEMUFLAGS := -m 2G -serial mon:stdio -nographic
 
-override IMAGE_NAME := template
+override IMAGE_NAME := JacketOS
 
 # Toolchain for building the 'limine' executable for the host.
 HOST_CC := cc
